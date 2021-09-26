@@ -1,0 +1,37 @@
+# Linux Coding Style Options
+# Obtained from the Linux Kernel BSD.
+
+# Brace Style Options
+style=linux
+
+# Tab Options
+indent=force-tab=4
+
+# Brace Modify Options
+attach-closing-while
+
+# Indentation Options
+indent-preproc-block
+indent-preproc-define
+indent-preproc-cond
+
+# Padding Options
+pad-oper
+pad-comma
+pad-header
+unpad-paren
+align-pointer=name
+align-reference=name
+
+# Formatting Options
+add-braces
+keep-one-line-statements
+max-code-length=100
+
+# Other Options
+suffix=none
+#exclude=####
+ignore-exclude-errors-x
+lineend=linux
+
+# http://astyle.sourceforge.net/astyle.html

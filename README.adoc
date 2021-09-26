@@ -1,3 +1,12 @@
 = NOWCODER_HUAWEI_ANS
 
 牛客网华为机试题答案，目前有c++版
+
+== 代码风格
+
+使用astyle管理代码风格，配置文件为Tools/astyle/astylerc。bash环境下参考命令：
+
+[source,bash]
+----
+$ astyle --options=./Tools/astyle/astylerc --recursive ./*.c,*.h
+----
