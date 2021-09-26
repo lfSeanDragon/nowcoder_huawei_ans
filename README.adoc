@@ -22,7 +22,18 @@
 
 [source,bash]
 ----
-$ astyle --options=./Tools/astyle/astylerc --recursive ./path_to_file/*.c,*.h
+$ astyle --options=./Tools/astyle/astylerc --recursive ./path_to_file/*.cpp,*.h
+----
+
+== 编译命令
+
+[quote, Nowcoder]
+编译器版本：clang++3.9，采用c++11标准，编译的时候采用-O2级优化，支持万能头文件 <bits/stdc++.h>。
+
+参考编译命令：
+[source,bash]
+----
+$ g++ -std=c++11 -O2 xxx.cpp
 ----
 
 ////
