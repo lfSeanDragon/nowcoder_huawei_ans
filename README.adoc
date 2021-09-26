@@ -2,6 +2,20 @@
 
 牛客网华为机试题答案，目前有c++版
 
+== 目录说明
+
+- /Cpp
+
+存放C++版的试题答案，每道题目有对应的一个.cpp文件。
+
+- /Tools
+
+存放astyle配置文件，用于格式化C++的代码。
+
+- /.vscode
+
+存放vscode编辑器的配置文件，由vscode自动生成。
+
 == 代码风格
 
 使用astyle管理代码风格，配置文件为Tools/astyle/astylerc。bash环境下参考命令：
@@ -10,3 +24,8 @@
 ----
 $ astyle --options=./Tools/astyle/astylerc --recursive ./path_to_file/*.c,*.h
 ----
+
+////
+AsciiDoc 语法快速参考
+https://asciidoctor.cn/docs/asciidoc-syntax-quick-reference/index.html
+////
