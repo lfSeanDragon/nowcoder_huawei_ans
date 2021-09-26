@@ -8,5 +8,5 @@
 
 [source,bash]
 ----
-$ astyle --options=./Tools/astyle/astylerc --recursive ./*.c,*.h
+$ astyle --options=./Tools/astyle/astylerc --recursive ./path_to_file/*.c,*.h
 ----
