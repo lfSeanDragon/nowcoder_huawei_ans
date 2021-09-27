@@ -4,25 +4,19 @@
 
 == 目录说明
 
-- /Cpp
-
-存放C++版的试题答案，每道题目有对应的一个.cpp文件。
-
-- /Tools
-
-存放astyle配置文件，用于格式化C++的代码。
-
-- /.vscode
-
-存放vscode编辑器的配置文件，由vscode自动生成。
+* /Cpp 存放C++版的试题答案，每道题目有对应的一个.cc文件。
+* /Tools 
+** astyle 存放astyle配置文件，用于格式化C++的代码。
+** gtest 存放astyle配置文件，用于格式化C++的代码。
+* /.vscode 存放vscode编辑器的配置文件，由vscode自动生成。
 
 == 代码风格
 
-使用astyle管理代码风格，配置文件为Tools/astyle/astylerc。bash环境下参考命令：
+使用astyle管理代码格式，配置文件为Tools/astyle/astylerc。bash环境下参考命令：
 
 [source,bash]
 ----
-$ astyle --options=./Tools/astyle/astylerc --recursive ./path_to_file/*.cpp,*.h
+$ astyle --options=./Tools/astyle/astylerc --recursive ./path_to_file/*.cc,*.h
 ----
 
 == 编译命令
@@ -33,7 +27,7 @@ $ astyle --options=./Tools/astyle/astylerc --recursive ./path_to_file/*.cpp,*.h
 参考编译命令：
 [source,bash]
 ----
-$ g++ -std=c++11 -O2 xxx.cpp
+$ g++ -std=c++11 -O2 xxx.cc
 ----
 
 ////
