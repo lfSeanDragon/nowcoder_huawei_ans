@@ -12,18 +12,12 @@ int main(void)
 
 	cin.getline(str, max_str_size);
 	cin >> ch;
-
-	for (int i = 0; str[i] != '\0'; ++i) {
-		if (str[i] >= 'A' && str[i] <= 'Z') {
-			str[i] += 'a' - 'A';
-		}
-	}
-	if (ch >= 'A' && ch <= 'Z') {
-		ch += 'a' - 'A';
+	if ('A' <= ch && ch <= 'Z') {
+		ch += 32;
 	}
 
 	for (int i = 0; str[i] != '\0'; ++i) {
-		num += (str[i] == ch) ? 1 : 0;
+		num += (str[i] == ch || str[i] == ch - 32) ? 1 : 0;
 	}
 
 	cout << num;
