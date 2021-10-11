@@ -1,3 +1,14 @@
+/*!
+    \file      hj2.cpp
+    \author    Archlizix (archlizix@qq.com)
+    \brief     HJ2 计算某字母出现次数
+    \version   1.0
+    \date      2021-10-11
+
+    \copyright Copyright (C) 2021 Archlizix
+
+*/
+
 #include<iostream>
 #include<string>
 
