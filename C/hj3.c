@@ -11,22 +11,40 @@
 
 #include<stdio.h>
 
-void bubble_sort(int arr[], int len)
+void swap(int *a, int *b)
 {
-	int i, j, temp;
-	int exchanged = 1;
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
 
-	for (i = 0; exchanged && i < len - 1; i++) {
-		exchanged = 0;
-		for (j = 0; j < len - 1 - i; j++) {
-			if (arr[j] > arr[j + 1]) {
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-				exchanged = 1;
-			}
+int partition(int arr[], int left, int right, int pivot_index)
+{
+	int pivot_value = arr[pivot_index];
+	swap(&arr[pivot_index], &arr[right]);
+	int store_index = left;
+	for (int i = left; i < right; ++i) {
+		if (arr[i] <= pivot_value) {
+			swap(&arr[store_index], &arr[i]);
+			++store_index;
 		}
 	}
+	swap(&arr[right], &arr[store_index]);
+	return store_index;
+}
+
+void quick_sort(int arr[], int left, int right)
+{
+	if (right <= left) {
+		return;
+	}
+
+	int pivot_index = right;
+
+	int pivot_index_new  = partition(arr, left, right, pivot_index);
+
+	quick_sort(arr, left, pivot_index_new - 1);
+	quick_sort(arr, pivot_index_new + 1, right);
 }
 
 int main(void)
@@ -40,7 +58,7 @@ int main(void)
 			scanf("%d", &num[i]);
 		}
 
-		bubble_sort(num, N);
+		quick_sort(num, 0, N - 1);
 
 		int last = num[0];
 		if (flag) {
