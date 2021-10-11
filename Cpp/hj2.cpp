@@ -1,6 +1,8 @@
 #include<iostream>
 #include<string>
+
 using namespace std;
+
 int main(void)
 {
 	constexpr int max_str_size = 500;
