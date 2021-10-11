@@ -2,14 +2,13 @@
 set -eu
 
 # Check for the latest astyle version
-ASTYLE_VER_REQUIRED_1="Artistic Style Version 2.06"
-ASTYLE_VER_REQUIRED_2="Artistic Style Version 3.0"
-ASTYLE_VER_REQUIRED_3="Artistic Style Version 3.0.1"
-ASTYLE_VER_REQUIRED_4="Artistic Style Version 3.1"
+ASTYLE_VER_REQUIRED_1="Artistic Style Version 3.0"
+ASTYLE_VER_REQUIRED_2="Artistic Style Version 3.0.1"
+ASTYLE_VER_REQUIRED_3="Artistic Style Version 3.1"
 
 astyle_ver() {
-	echo "PX4 requires at least ${ASTYLE_VER_REQUIRED_1}"
-	echo "You can get the correct version here: https://sourceforge.net/projects/astyle/files/astyle/astyle%202.06/"
+	echo "This project requires at least ${ASTYLE_VER_REQUIRED_1}"
+	echo "You can get the correct version here: https://sourceforge.net/projects/astyle/files/astyle/astyle%203.1/"
 }
 
 # check if astyle is installed
@@ -24,11 +23,10 @@ else
 
 	if [ "$ASTYLE_VER" != "$ASTYLE_VER_REQUIRED_1" -a \
 	     "$ASTYLE_VER" != "$ASTYLE_VER_REQUIRED_2" -a \
-	     "$ASTYLE_VER" != "$ASTYLE_VER_REQUIRED_3" -a \
-	     "$ASTYLE_VER" != "$ASTYLE_VER_REQUIRED_4" ]
+	     "$ASTYLE_VER" != "$ASTYLE_VER_REQUIRED_3" ]
 	then
 	    echo "Error: you're using ${ASTYLE_VER}"
-	    echo "but should be using ${ASTYLE_VER_REQUIRED_1}, ${ASTYLE_VER_REQUIRED_2}, ${ASTYLE_VER_REQUIRED_3}, or ${ASTYLE_VER_REQUIRED_4} instead"
+	    echo "but should be using ${ASTYLE_VER_REQUIRED_1}, ${ASTYLE_VER_REQUIRED_2}, or ${ASTYLE_VER_REQUIRED_3} instead"
 	    exit 1
 	fi
 fi
@@ -37,7 +35,7 @@ CI="${CI:-false}"
 DIR=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
 
 if [[ "$@" == "--fix" ]]; then
-    export PX4_ASTYLE_FIX=1
+    export ASTYLE_FIX=1
 fi
 
 
