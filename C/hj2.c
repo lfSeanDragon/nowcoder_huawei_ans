@@ -17,7 +17,12 @@ int main(void)
 	char ch;
 	int num = 0;
 
-	gets(str);
+	for (int i = 0; i < 500; ++i) {
+		scanf("%c", &str[i]);
+		if (str[i] == '\n') {
+			break;
+		}
+	}
 	scanf("%c", &ch);
 
 	if ('A' <= ch && ch <= 'Z') {
