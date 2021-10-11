@@ -1,3 +1,13 @@
+/*!
+    \file      hj3.c
+    \author    Archlizix (archlizix@qq.com)
+    \brief     HJ3 明明的随机数
+    \version   0.1
+    \date      2021-10-11
+
+    \copyright Copyright (C) 2021 Archlizix
+
+*/
 #include<iostream>
 #include<algorithm>
 
