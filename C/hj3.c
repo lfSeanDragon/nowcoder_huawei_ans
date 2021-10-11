@@ -11,6 +11,38 @@
 
 #include<stdio.h>
 
+void quick_sort(int arr[], int left, int right);
+
+int main(void)
+{
+	int N;
+	int num[1000];
+	int flag = 0;
+
+	while (scanf("%d", &N) != EOF) {
+		for (int i = 0; i < N; ++i) {
+			scanf("%d", &num[i]);
+		}
+
+		quick_sort(num, 0, N - 1);
+
+		int last = num[0];
+		if (flag) {
+			printf("\n");
+		}
+		flag = 1;
+		printf("%d", num[0]);
+		for (int i = 1; i < N; ++i) {
+			if (num[i] != last) {
+				printf("\n%d", num[i]);
+				last = num[i];
+			}
+		}
+	}
+
+	return 0;
+}
+
 void swap(int *a, int *b)
 {
 	int tmp = *a;
@@ -45,34 +77,4 @@ void quick_sort(int arr[], int left, int right)
 
 	quick_sort(arr, left, pivot_index_new - 1);
 	quick_sort(arr, pivot_index_new + 1, right);
-}
-
-int main(void)
-{
-	int N;
-	int num[1000];
-	int flag = 0;
-
-	while (scanf("%d", &N) != EOF) {
-		for (int i = 0; i < N; ++i) {
-			scanf("%d", &num[i]);
-		}
-
-		quick_sort(num, 0, N - 1);
-
-		int last = num[0];
-		if (flag) {
-			printf("\n");
-		}
-		flag = 1;
-		printf("%d", num[0]);
-		for (int i = 1; i < N; ++i) {
-			if (num[i] != last) {
-				printf("\n%d", num[i]);
-				last = num[i];
-			}
-		}
-	}
-
-	return 0;
 }
