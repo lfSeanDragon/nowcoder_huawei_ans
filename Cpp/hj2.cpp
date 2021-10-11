@@ -1,8 +1,6 @@
 #include<iostream>
 #include<string>
 
-using namespace std;
-
 int main(void)
 {
 	constexpr int max_str_size = 500;
@@ -10,8 +8,8 @@ int main(void)
 	char ch;
 	int num = 0;
 
-	cin.getline(str, max_str_size);
-	cin >> ch;
+	std::cin.getline(str, max_str_size);
+	std::cin >> ch;
 	if ('A' <= ch && ch <= 'Z') {
 		ch += 32;
 	}
@@ -20,6 +18,6 @@ int main(void)
 		num += (str[i] == ch || str[i] == ch - 32) ? 1 : 0;
 	}
 
-	cout << num;
+	std::cout << num;
 	return 0;
 }
