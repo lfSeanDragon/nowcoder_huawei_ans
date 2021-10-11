@@ -10,18 +10,13 @@
 */
 
 #include<stdio.h>
+#include<string.h>
 
 int main(void)
 {
 	char data[5000];
 	while (scanf("%s", data) != EOF) {
 	}
-
-	int num = 0;
-	while (data[num] != '\0') {
-		++num;
-	}
-
-	printf("%d", num);
+	printf("%d", strlen(data));
 	return 0;
 }
