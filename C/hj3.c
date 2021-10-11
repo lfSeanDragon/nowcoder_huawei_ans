@@ -8,8 +8,26 @@
     \copyright Copyright (C) 2021 Archlizix
 
 */
-#include<iostream>
-#include<algorithm>
+
+#include<stdio.h>
+
+void bubble_sort(int arr[], int len)
+{
+	int i, j, temp;
+	int exchanged = 1;
+
+	for (i = 0; exchanged && i < len - 1; i++) {
+		exchanged = 0;
+		for (j = 0; j < len - 1 - i; j++) {
+			if (arr[j] > arr[j + 1]) {
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+				exchanged = 1;
+			}
+		}
+	}
+}
 
 int main(void)
 {
@@ -17,22 +35,22 @@ int main(void)
 	int num[1000];
 	int flag = 0;
 
-	while (std::cin >> N) {
+	while (scanf("%d", &N) != EOF) {
 		for (int i = 0; i < N; ++i) {
-			std::cin >> num[i];
+			scanf("%d", &num[i]);
 		}
 
-		std::sort(num, num + N);
+		bubble_sort(num, N);
 
 		int last = num[0];
 		if (flag) {
-			std::cout << std::endl;
+			printf("\n");
 		}
 		flag = 1;
-		std::cout << num[0];
+		printf("%d", num[0]);
 		for (int i = 1; i < N; ++i) {
 			if (num[i] != last) {
-				std::cout << std::endl << num[i];
+				printf("\n%d", num[i]);
 				last = num[i];
 			}
 		}
