@@ -10,13 +10,16 @@
 */
 
 #include<stdio.h>
-#include<string.h>
 
 int main(void)
 {
-	char data[5000];
-	while (scanf("%s", data) != EOF) {
+	char str;
+	int ans = -1;
+
+	while (scanf("%c", &str) != EOF) {
+		ans = (str == ' ') ? -1 : ans + 1;
 	}
-	printf("%d", strlen(data));
+
+	printf("%d", ans);
 	return 0;
 }
