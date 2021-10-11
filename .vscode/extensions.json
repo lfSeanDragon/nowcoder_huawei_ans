@@ -1,0 +1,8 @@
+{
+	"recommendations": [
+		"cschlosser.doxdocgen",
+		"ms-vscode.cpptools",
+		"chiehyu.vscode-astyle",
+		"asciidoctor.asciidoctor-vscode"
+	]
+}
