@@ -24,7 +24,6 @@ int main(void)
 		}
 	}
 	scanf("%c", &ch);
-
 	if ('A' <= ch && ch <= 'Z') {
 		ch += 32;
 	}
