@@ -1,13 +1,11 @@
 #include<iostream>
 #include<string>
 
-using namespace std;
-
 int main(void)
 {
-	string data;
-	while (cin >> data) {
+	std::string data;
+	while (std::cin >> data) {
 	}
-	cout << data.size();
+	std::cout << data.size();
 	return 0;
 }
