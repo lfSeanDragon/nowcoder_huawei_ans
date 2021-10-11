@@ -11,6 +11,7 @@ int main(void)
 		for (int i = 0; i < N; ++i) {
 			std::cin >> num[i];
 		}
+
 		std::sort(num, num + N);
 
 		int last = num[0];
