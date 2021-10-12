@@ -8,7 +8,6 @@
 * /Cpp 存放C++版的试题答案，每道题目有对应的一个.cc文件。
 * /Tools 
 ** astyle 存放astyle配置文件及自动化脚本，用于格式化C/C++的代码。
-** gtest GoogleTest，用于测试代码功能。
 * /.vscode 存放vscode编辑器的配置文件，由vscode自动生成。
 
 == 代码风格
@@ -30,10 +29,6 @@ $ astyle --options=./Tools/astyle/astylerc --recursive ./path_to_file/*.cc,*.h
 ----
 $ g++ -std=c++11 -O2 xxx.cc
 ----
-
-== 测试
-
-测试环境：Arch Linux，g++ (GCC) 11.1.0，GoogleTest。未完善。
 
 ////
 AsciiDoc 语法快速参考
