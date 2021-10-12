@@ -28,7 +28,7 @@ int main(void)
 		ch += 32;
 	}
 
-	for (int i = 0; str[i] != '\0'; ++i) {
+	for (int i = 0; str[i] != '\n'; ++i) {
 		num += (str[i] == ch || str[i] == ch - 32) ? 1 : 0;
 	}
 
