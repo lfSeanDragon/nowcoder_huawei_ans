@@ -13,11 +13,10 @@
 
 int main(void)
 {
-	int N, num;
+	int N;
 
 	while (scanf("%d", &N) != EOF) {
-		int buckets[1001] = {0};
-
+		int num, buckets[1001] = {0};
 		for (int i = 0; i < N; ++i) {
 			scanf("%d", &num);
 			buckets[num] = 1;
