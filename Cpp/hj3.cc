@@ -1,5 +1,5 @@
 /*!
-    \file      hj3.cpp
+    \file      hj3.cc
     \author    Archlizix (archlizix@qq.com)
     \brief     HJ3 明明的随机数
     \version   1.0
@@ -10,23 +10,22 @@
 */
 
 #include<iostream>
-#include<set>
 
-int main()
+int main(void)
 {
-	int n;
-	std::set<int> order;
+	int N;
 
-	while (std::cin >> n) {
-		order.clear();
-		for (int i = 0; i < n; ++i) {
-			int num;
+	while (std::cin >> N) {
+		int num, buckets[1001] = {0};
+		for (int i = 0; i < N; ++i) {
 			std::cin >> num;
-			order.emplace(num);
+			buckets[num] = 1;
 		}
 
-		for (const auto &factor : order) {
-			std::cout << factor << std::endl;
+		for (int i = 1; i <= 1000; ++i) {
+			if (buckets[i]) {
+				std::cout << i << std::endl;
+			}
 		}
 	}
 

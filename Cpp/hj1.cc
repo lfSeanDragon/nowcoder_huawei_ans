@@ -1,5 +1,5 @@
 /*!
-    \file      hj1.cpp
+    \file      hj1.cc
     \author    Archlizix (archlizix@qq.com)
     \brief     HJ1 字符串最后一个单词的长度
     \version   2.0

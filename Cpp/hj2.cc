@@ -1,5 +1,5 @@
 /*!
-    \file      hj2.cpp
+    \file      hj2.cc
     \author    Archlizix (archlizix@qq.com)
     \brief     HJ2 计算某字母出现次数
     \version   1.0
