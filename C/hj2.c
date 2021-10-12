@@ -2,7 +2,7 @@
     \file      hj2.c
     \author    Archlizix (archlizix@qq.com)
     \brief     HJ2 计算某字母出现次数
-    \version   0.1
+    \version   2.0
     \date      2021-10-11
 
     \copyright Copyright (C) 2021 Archlizix
