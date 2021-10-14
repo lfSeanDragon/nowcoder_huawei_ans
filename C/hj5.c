@@ -51,13 +51,12 @@ void reverse(char *arr, int left, int right)
 
 void sys_convert(char input[], char output[], int from, int to)
 {
-	int head = 0;
-	if (!input[head]) {
+	if (!input[0]) {
 		output[0] = '\0';
 		return;
 	}
 
-	int tail = strlen(input) - 1;
+	int head = 0, tail = strlen(input) - 1;
 	int p = 0;
 
 	while (head <= tail && input[head]) {
