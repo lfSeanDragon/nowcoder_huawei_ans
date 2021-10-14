@@ -89,11 +89,9 @@ int main(void)
 	char input[100];
 	char output[100];
 
-	while (getchar() != EOF) {
-		getchar();
-		scanf("%s\n", input);
+	while (scanf("%s", input) != EOF) {
 
-		sys_convert(input, output, 16, 10);
+		sys_convert(input + 2, output, 16, 10);
 
 		printf("%s\n", output);
 	}
