@@ -2,7 +2,7 @@
     \file      hj5.cc
     \author    Archlizix (archlizix@qq.com)
     \brief     HJ5 进制转换
-    \version   0.1
+    \version   1.0
     \date      2021-10-14
 
     \copyright Copyright (C) 2021 Archlizix
