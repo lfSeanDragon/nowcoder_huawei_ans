@@ -7,6 +7,7 @@
 
     \copyright Copyright (C) 2021 Archlizix
 
+	\note      忽略大小写的字符比较，可以两边统一大小写，也可以固定其中一边多比较一遍。
 */
 
 #include<stdio.h>

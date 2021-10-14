@@ -7,6 +7,7 @@
 
     \copyright Copyright (C) 2021 Archlizix
 
+	\note      string::substr()生成了新的对象，比指针实现耗资源，但胜在简单。
 */
 
 #include<iostream>

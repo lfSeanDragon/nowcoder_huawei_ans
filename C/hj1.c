@@ -7,6 +7,7 @@
 
     \copyright Copyright (C) 2021 Archlizix
 
+	\note      逐字符计数耗时间，针对最后一个单词计数耗空间。
 */
 
 #include<stdio.h>

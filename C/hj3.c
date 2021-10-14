@@ -7,6 +7,7 @@
 
     \copyright Copyright (C) 2021 Archlizix
 
+	\note      桶排序又快又简单。
 */
 
 #include<stdio.h>

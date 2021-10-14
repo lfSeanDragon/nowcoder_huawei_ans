@@ -7,6 +7,7 @@
 
     \copyright Copyright (C) 2021 Archlizix
 
+	\note      利用scanf()特性删除\n。%s格式下，scanf()拒收后续\n，吸收并丢弃前导\n。
 */
 
 #include<stdio.h>

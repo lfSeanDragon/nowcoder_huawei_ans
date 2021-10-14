@@ -1,3 +1,6 @@
 {
 	"astyle.astylerc": "${workspaceRoot}/Tools/astyle/astylerc",
+	"doxdocgen.file.customTag": [
+		"\\note      ",
+	],
 }
