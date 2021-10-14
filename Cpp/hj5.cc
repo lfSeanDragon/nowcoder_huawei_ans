@@ -1,17 +1,18 @@
 /*!
-    \file      hj5.c
+    \file      hj5.cc
     \author    Archlizix (archlizix@qq.com)
     \brief     HJ5 进制转换
-    \version   1.0
-    \date      2021-10-12
+    \version   0.1
+    \date      2021-10-14
 
     \copyright Copyright (C) 2021 Archlizix
 
     \note      大数运算，虽然测试用例中并没有大数。
 */
 
-#include <stdio.h>
-#include <string.h>
+#include<iostream>
+#include<string>
+#include<algorithm>
 
 char int_to_ch(int num)
 {
@@ -37,32 +38,19 @@ int ch_to_int(char ch)
 	return -1;
 }
 
-void reverse(char *arr, int left, int right)
+void sys_convert(std::string &input, std::string &output, int from, int to)
 {
-	char tmp;
-	while (left < right) {
-		tmp = arr[left];
-		arr[left] = arr[right];
-		arr[right] = tmp;
-		++left;
-		--right;
-	}
-}
-
-void sys_convert(char input[], char output[], int from, int to)
-{
-	if (!input[0]) {
-		output[0] = '\0';
+	if (input.empty()) {
+		output.clear();
 		return;
 	}
-	if (!strcmp(input, "0")) {
-		output[0] = '0';
-		output[1] = '\0';
+	if (input == "0") {
+		output = "0";
 		return;
 	}
 
-	int head = 0, tail = strlen(input) - 1;
-	int p = 0;
+	int head = 0, tail = input.size() - 1;
+	output.clear();
 
 	while (head <= tail && input[head]) {
 		int remainder = 0;
@@ -76,21 +64,21 @@ void sys_convert(char input[], char output[], int from, int to)
 			input[i] = int_to_ch(remainder / to);
 			remainder %= to;
 		}
-		output[p++] = int_to_ch(remainder);
+		output.push_back(int_to_ch(remainder));
 	}
-	output[p] = '\0';
 
-	reverse(output, 0, strlen(output) - 1);
+	reverse(output.begin(), output.end());
 
 	return;
 }
 
 int main(void)
 {
-	char input[100], output[100];
+	std::string input, output;
 
-	while (scanf("%s", input) != EOF) {
-		sys_convert(input + 2, output, 16, 10);
-		printf("%s\n", output);
+	while (getline(std::cin, input)) {
+		input = input.substr(2, input.size() - 2);
+		sys_convert(input, output, 16, 10);
+		std::cout << output << std::endl;
 	}
 }
