@@ -85,13 +85,10 @@ void sys_convert(char input[], char output[], int from, int to)
 
 int main(void)
 {
-	char input[100];
-	char output[100];
+	char input[100], output[100];
 
 	while (scanf("%s", input) != EOF) {
-
 		sys_convert(input + 2, output, 16, 10);
-
 		printf("%s\n", output);
 	}
 }
