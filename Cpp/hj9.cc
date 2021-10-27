@@ -16,9 +16,9 @@ int main(void)
 {
 	int in;
 	int ans = 0;
-	int set[10] = {0};
 
 	while (std::cin >> in) {
+		int set[10] = {0};
 		while (in) {
 			if (!set[in % 10]) {
 				set[in % 10] = 1;
