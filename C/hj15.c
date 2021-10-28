@@ -7,7 +7,7 @@
 
     \copyright Copyright (C) 2021 Archlizix
 
-    \note      位运算消除最后一个1。
+    \note      通过位运算直接消除最后一个1，不需要逐位判断。
 */
 
 #include <stdio.h>
