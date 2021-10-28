@@ -1,7 +1,7 @@
 /*!
     \file      hj15.cc
     \author    Archlizix (archlizix@qq.com)
-    \brief
+    \brief     HJ15 求int型正整数在内存中存储时1的个数
     \version   1.0
     \date      2021-10-28
 
