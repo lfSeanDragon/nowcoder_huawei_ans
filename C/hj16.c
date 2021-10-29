@@ -2,7 +2,7 @@
     \file      hj16.c
     \author    Archlizix (archlizix@qq.com)
     \brief     HJ16 购物单
-    \version   1.0
+    \version   1.2
     \date      2021-10-28
 
     \copyright Copyright (C) 2021 Archlizix
@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-inline int max(int a, int b)
+static inline int max(int a, int b)
 {
 	return (a > b) ? a : b;
 }
