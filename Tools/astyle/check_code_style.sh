@@ -19,7 +19,7 @@ if [ -f "$FILE" ]; then
 			# Make sure this file is not staged for comitting
 			git reset $FILE
 			# Provide instructions
-			echo $FILE 'bad formatting, please run "make format" or "./Tools/astyle/fix_code_style.sh' $FILE'"'
+			echo $FILE 'bad formatting, please run "./Tools/astyle/fix_code_style.sh' $FILE'"'
 			exit 1
 		fi
 	fi
