@@ -2,12 +2,12 @@
     \file      hj16.c
     \author    Archlizix (archlizix@qq.com)
     \brief     HJ16 购物单
-    \version   1.2
+    \version   1.3
     \date      2021-10-28
 
     \copyright Copyright (C) 2021 Archlizix
 
-    \note      动态规划，机械枚举4种情况。
+    \note      动态规划，每一步枚举4种情况。
 */
 
 #include <stdio.h>
