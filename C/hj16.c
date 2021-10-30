@@ -21,14 +21,15 @@ int main(void)
 {
 	int N, m;
 	while (scanf("%d %d", &N, &m) != EOF) {
+		//附件不单独成行
 		int price[61][3] = {0};
 		int weight[61][3] = {0};
 		for (int i = 1; i <= m; i++) {
 			int v, p, q;
 
 			scanf("%d %d %d", &v, &p, &q);
-			if (q) { //表示附件
-				if (!price[q][1]) { //表示第一件附件
+			if (q) {
+				if (!price[q][1]) {
 					price[q][1] = v;
 					weight[q][1] = v * p;
 				} else {
@@ -52,19 +53,19 @@ int main(void)
 
 				price_total = price[i][0] / 10 + price[i][1] / 10;
 				weight_total = weight[i][0] + weight[i][1];
-				if (price_total <= j && price[i][1]) { //带第一个附件
+				if (price_total <= j && price[i][1]) { //带附件1
 					total_max[j] = max(total_max[j], total_max[j - price_total] + weight_total);
 				}
 
 				price_total = price[i][0] / 10 + price[i][2] / 10;
 				weight_total = weight[i][0] + weight[i][2];
-				if (price[i][2] && j >= price_total) { //带第二个附件
+				if (price[i][2] && j >= price_total) { //带附件2
 					total_max[j] = max(total_max[j], total_max[j - price_total] + weight_total);
 				}
 
 				price_total = price[i][0] / 10 + price[i][2] / 10 + price[i][1] / 10;
 				weight_total = weight[i][0] + weight[i][2] + weight[i][1];
-				if (price[i][1] && price[i][2] && j >= price_total) { //带1、2附件
+				if (price[i][1] && price[i][2] && j >= price_total) { //带附件1、2
 					total_max[j] = max(total_max[j], total_max[j - price_total] + weight_total);
 				}
 			}

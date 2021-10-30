@@ -17,6 +17,7 @@ int main(void)
 {
 	int N, m;
 	while (std::cin >> N >> m) {
+		//附件不单独成行
 		int price[61][3] = {0};
 		int weight[61][3] = {0};
 
