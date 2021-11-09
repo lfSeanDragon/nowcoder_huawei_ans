@@ -1,18 +1,21 @@
 /*!
     \file      hj28.cc
     \author    Archlizix (archlizix@qq.com)
-    \brie      HJ28 素数伴侣
-    \version   0.9
-    \date      2021-11-08
+    \brief     HJ28 素数伴侣
+    \version   1.0
+    \date      2021-11-09
 
     \copyright Copyright (C) 2021 Archlizix
 
-    \note      dfs求01矩阵的秩，不清楚错在哪里。
+    \note      匈牙利算法求二分图的最大匹配。
 */
 
 #include <iostream>
 #include <vector>
 #include <cmath>
+
+std::vector<int> even, odd;
+std::vector<int>match(100), book(100);
 
 bool is_prime(int n)
 {
@@ -22,43 +25,18 @@ bool is_prime(int n)
 	return true;
 }
 
-bool is_valid(std::vector<std::vector<int>> &vt, std::vector<std::vector<int>> &mask, int n)
+bool dfs(int evenx)
 {
-	int y = n / vt.size();
-	int x = n % vt.size();
-
-	if (!vt[n / vt.size()][n % vt.size()])return false;
-	for (int i = 0; i < mask.size(); ++i) {
-		if (mask[i][x]) {
-			return false;
-		}
-	}
-	for (int i = 0; i < mask[0].size(); ++i) {
-		if (mask[y][i]) {
-			return false;
-		}
-	}
-	return true;
-}
-
-void dfs(std::vector<std::vector<int>> &vt, std::vector<std::vector<int>> &mask, int &max, int n)
-{
-	if (n == vt.size()*vt[0].size()) {
-		int tmp = 0;
-		for (const auto &a : mask) {
-			for (const auto &b : a) {
-				tmp += b;
+	for (int i = 0; i < odd.size(); ++i) {
+		if (book[i] == 0 && is_prime(even[evenx] + odd[i])) {
+			book[i] = 1;
+			if (match[i] == -1 || dfs(match[i])) {
+				match[i] = evenx;
+				return true;
 			}
 		}
-		max = std::max(max, tmp);
-		return;
 	}
-	if (is_valid(vt, mask, n)) {
-		mask[n / vt.size()][n % vt.size()] = 1;
-		dfs(vt, mask, max, n + 1);
-		mask[n / vt.size()][n % vt.size()] = 0;
-	}
-	dfs(vt, mask, max, n + 1);
+	return false;
 }
 
 int main(void)
@@ -66,36 +44,25 @@ int main(void)
 	int n;
 	while (std::cin >> n) {
 		int tmp;
-		std::vector<int> odd, even;
 		for (int i = 0; i < n; ++i) {
 			std::cin >> tmp;
 			if (tmp % 2) {
-				odd.push_back(tmp);
-			} else {
 				even.push_back(tmp);
+			} else {
+				odd.push_back(tmp);
 			}
 		}
-
-		std::vector<std::vector<int>>vt(odd.size(),
-										std::vector<int>(even.size()));
-		std::vector<std::vector<int>>mask(odd.size(),
-										  std::vector<int>(even.size()));
-		for (int i = 0; i < odd.size(); ++i) {
-			for (int j = 0; j < even.size(); ++j) {
-				if (is_prime(odd[i] + even[j]))vt[i][j] = 1;
-			}
-		}
+		for (int i = 0; i < n; ++i) match[i] = -1;
 
 		int max = 0;
-		dfs(vt, mask, max, 0);
-		std::cout << max << std::endl;
+		for (int i = 0; i < even.size(); ++i) {
+			for (int j = 0; j < odd.size(); ++j) book[j] = 0;
+			if (dfs(i)) ++max;
+		}
 
-		//for (int i = 0; i < vt.size(); ++i) {
-		//for (int j = 0; j < vt[0].size(); ++j) {
-		//std::cout << vt[i][j] << " ";
-		//}
-		//std::cout << std::endl;
-		//}
+		std::cout << max << std::endl;
+		even.clear();
+		odd.clear();
 	}
 	return 0;
 }
