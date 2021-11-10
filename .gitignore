@@ -1,1 +1,6 @@
 *.out
+
+C/*
+Cpp/*
+!C/*.c
+!Cpp/*.cc
