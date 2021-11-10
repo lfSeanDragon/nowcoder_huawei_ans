@@ -19,7 +19,7 @@ int main(void)
 	char ch;
 	while (std::cin >> a >> ch >> b >> ch >> c >> ch >> d) {
 		std::cin >> n;
-		uint32_t res = (a << 24)  + (b << 16) + (c << 8)  + d;
+		uint32_t res = (a << 24)  | (b << 16) | (c << 8)  | d;
 		a = n >> 24;
 		b = (n >> 16) & 0xFF;
 		c = (n >> 8) & 0xFF;
