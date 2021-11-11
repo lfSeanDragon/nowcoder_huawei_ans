@@ -13,12 +13,13 @@
 #include <iostream>
 #include <climits>
 #include <cstdint>
+#include <iomanip>
 
 double cuberoot(double x)
 {
 	double left = INT_MIN, right = INT_MAX, mid;
 	while (left <= right) {
-		mid = left + (right - left) / 2;
+		mid = (left + right) / 2;
 		double temp = mid * mid * mid;
 		if (temp > x) {
 			right = mid - 0.01;
@@ -33,7 +34,7 @@ int main(void)
 {
 	double n;
 	while (std::cin >> n) {
-		std::cout << cuberoot(n) << std::endl;
+		std::cout << std::fixed << std::setprecision(1) << cuberoot(n) << std::endl;
 	}
 	return 0;
 }
