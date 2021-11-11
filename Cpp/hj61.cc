@@ -1,3 +1,15 @@
+/*!
+    \file      hj61.cc
+    \author    Archlizix (archlizix@qq.com)
+    \brief     HJ61 放苹果
+    \version   1.0
+    \date      2021-11-11
+
+    \copyright Copyright (C) 2021 Archlizix
+
+    \note
+*/
+
 #include <iostream>
 #include<vector>
 
