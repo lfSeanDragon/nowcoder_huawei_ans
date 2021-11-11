@@ -24,7 +24,9 @@ double cuberoot(double x)
 			right = mid - 0.01;
 		} else if (temp < x) {
 			left = mid + 0.01;
-		} else return mid;
+		} else {
+			return mid;
+		}
 	}
 	return left;
 }
@@ -33,7 +35,8 @@ int main(void)
 {
 	double n;
 	while (std::cin >> n) {
-		std::cout << std::fixed << std::setprecision(1) << cuberoot(n) << std::endl;
+		std::cout << std::fixed << std::setprecision(1)
+				  << cuberoot(n) << std::endl;
 	}
 	return 0;
 }
