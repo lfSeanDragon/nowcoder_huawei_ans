@@ -12,7 +12,6 @@
 
 #include <iostream>
 #include <climits>
-#include <cstdint>
 #include <iomanip>
 
 double cuberoot(double x)
