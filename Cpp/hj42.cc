@@ -14,7 +14,7 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> to_abc = {
+std::vector<std::string> to_abc {
 	"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
 	"eleven", "twelve", "thirteen", "fourteen", "fifteen",
 	"sixteen", "seventeen", "eighteen", "nineteen", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety",
