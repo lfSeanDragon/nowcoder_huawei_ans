@@ -23,7 +23,8 @@ bool is_valid(std::vector<int>a, int begin, int end, double tot)
 	bool ans = false;
 	for (int i = begin; i < end; ++i) {
 		std::swap(a[i], a[end - 1]);
-		ans = is_valid(a, begin, end - 1, tot + a[end - 1]) ||
+		ans = ans ||
+			  is_valid(a, begin, end - 1, tot + a[end - 1]) ||
 			  is_valid(a, begin, end - 1, tot - a[end - 1]) ||
 			  is_valid(a, begin, end - 1, tot * a[end - 1]) ||
 			  is_valid(a, begin, end - 1, tot / a[end - 1]);
